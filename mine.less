@@ -1,0 +1,139 @@
+﻿@borderColor: #B1B1B1;
+@wellBackground: whitesmoke;
+@wellSelecionadoBackground: #c0c0c0;
+
+.container.demo {
+    padding-top: 100px;
+
+    p {
+        text-align: left;
+    }
+}
+
+.row {
+}
+
+.itemLista {
+    border-top: 1px solid @borderColor;
+    border-bottom: 1px solid @borderColor;
+    margin: 2px 5px 0 0;
+    background-color: @wellBackground;
+
+    h2 {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    a {
+        color: #555555;
+
+        :hover {
+            color: #555555;
+            text-decoration: none;
+        }
+    }
+}
+
+.pergunta {
+    border-top: 1px solid @borderColor;
+    border-bottom: 1px solid @borderColor;
+    background-color: @wellBackground;
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+    p {
+        font-size: 22px;
+        line-height: 30px;
+        margin: 0 5px 10px;
+    }
+}
+
+.respostas {
+    margin-left: 0;
+
+    ul {
+        margin: 0 0 10px 0;
+    }
+
+    li {
+        padding: 10px;
+    }
+
+    .indice {
+        float: left;
+        font-size: 50px;
+        font-weight: bold;
+        margin: 10px 10px 0 0;
+    }
+
+    .questao {
+        overflow: hidden;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .well {
+        margin-bottom: 15px;
+        border-top: 1px solid @borderColor;
+        border-bottom: 1px solid @borderColor;
+    }
+
+    .well-selecionado {
+        background-color: @wellSelecionadoBackground;
+        border-top: 1px solid #696969;
+        border-bottom: 1px solid #696969;
+        color: #474747;
+        font-weight: bold;
+    }
+}
+
+.navegacao {
+    font-size: 50px;
+    margin: 0 20px 0 0;
+
+    a {
+        color: #555555;
+
+        :hover {
+            color: #555555;
+            text-decoration: none;
+        }
+    }
+}
+
+.navegacao-topo {
+    font-size: 30px;
+
+    li {
+        margin-top: 4px;
+        font-size: 30px;
+
+        a {
+            color: #808080;
+            padding: 0 !important;
+
+            :hover {
+                color: #808080;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+div .inline{
+	display: inline;
+}
+
+@media (max-width: 767px) {
+    .container.demo {
+        padding-top: 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .container.demo {
+        padding-top: 20px;
+    }
+}

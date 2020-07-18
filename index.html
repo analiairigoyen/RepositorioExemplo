@@ -1,0 +1,138 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-gb"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-gb"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-gb"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en-gb">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MobEAD</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <link href="kickstrap.css" rel="stylesheet" />
+    <link href="mine.css" rel="stylesheet" />
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+
+    <div id="sf-wrapper">
+        <!-- Prompt IE 6/7 users to install Chrome Frame. Remove this if you support IE 7-.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+        <!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+        <nav class="navbar navbar-fixed-top">
+            <nav class="navbar-inner">
+                <section class="container navegacao-topo">
+                    <a class="brand">MobEAD</a>
+                    <ul class="nav">
+                        <li class="active"><a href="#"><i class="icon-home" data-bind="click:openTestList"></i></a></li>
+                    </ul>
+                </section>
+            </nav>
+        </nav>
+
+        <div data-bind="ifnot: CurrentTest">
+            <section class="container demo">
+                <article class="row">
+                    <div class="span2"></div>
+                    <div class="span8 pagination-centered ">
+                        <p style="text-align: center;">Select your test!</p>
+                        <ul data-bind="foreach: Tests">
+                            <li class="media well well-small itemLista" data-bind="click:$parent.selectTest"><a href="#" data-bind="text:Exam"></a></li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+        </div>
+        <div data-bind="with: CurrentTest">
+            <section class="container demo">
+                <div data-bind="ifnot: ShowResult">
+                    <article class="row" data-bind="with: Question">
+                        <div class="span6 pergunta">
+                            <p data-bind="text: Formulation"></p>
+                        </div>
+                        <div class="span6 respostas">
+                            <ul>
+                                <li class="media well" data-bind="css: { 'well-selecionado': NumberAnswered() == 1 },click:function(data,event){ selectAlternative(1); }">
+                                    <span class="indice">a  
+                                    </span>
+                                    <div class="questao">
+                                        <p data-bind="text: AlternativeOne"></p>
+                                    </div>
+                                </li>
+                                <li class="media well" data-bind="css: { 'well-selecionado': NumberAnswered() == 2 },click:function(data,event){ selectAlternative(2); }">
+                                    <div class="indice">
+                                        b 
+                                    </div>
+                                    <div class="questao">
+                                        <p data-bind="text: AlternativeTwo"></p>
+                                    </div>
+                                </li>
+                                <li class="media well" data-bind="css: { 'well-selecionado': NumberAnswered() == 3 },click:function(data,event){ selectAlternative(3); }">
+                                    <div class="indice">
+                                        c 
+                                    </div>
+                                    <div class="questao">
+                                        <p data-bind="text: AlternativeThree"></p>
+                                    </div>
+                                </li>
+                                <li class="media well ultimo" data-bind="css: { 'well-selecionado': NumberAnswered() == 4 },click:function(data,event){ selectAlternative(4); }">
+                                    <div class="indice">
+                                        d 
+                                    </div>
+                                    <div class="questao">
+                                        <p data-bind="text: AlternativeFour"></p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <div data-bind="if: ShowResult">
+                    <article class="row">
+                        <div class="span3"></div>
+                        <div class="span6 well itemLista">
+                            <h2 data-bind="ifnot:Result">You Failed Miserably!!</h2>
+                            <h2 data-bind="if:Result">You Nailed it!!</h2>
+                            <h2>You've hit <strong data-bind="text:ActualCorrectAmount"></strong>&nbsp;out of <span data-bind="text:QuestionsAmount + 1"></span>&nbsp;questions!</h2>
+                            <h2 data-bind="ifnot:Result">You needed <span data-bind="text:MinCorrectAmount"></span>&nbsp;hits to succeed.</h2>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+        <div id="push"></div>
+    </div>
+
+
+    <footer id="footer">
+        <div class="pull-right navegacao" data-bind="with: CurrentTest">
+            <div class="inline" data-bind="visible:!ShowResult()"><span data-bind="text:CurrentQuestion() + 1"></span>/<span data-bind="text:QuestionsAmount + 1"></span></div>
+            <!--<a href="#"><i class="icon-home" data-bind="click:openTestList"></i></a>-->
+            <a href="#"><i class="icon-circle-arrow-left" data-bind="click:previousQuestion"></i></a>
+            <div class="inline" data-bind="visible:!ShowResult()"><a href="#"><i class="icon-circle-arrow-right" data-bind="click:nextQuestion"></i></a></div>
+            <a href="#"><i class="icon-check" data-bind="click:endTest"></i></a>
+        </div>
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="Kickstrap/js/jquery-1.8.2.min.js"><\/script>');</script>
+    <script src="Scripts/knockout-2.2.0.debug.js"></script>
+    <script src="Scripts/knockout.mapping.debug.js"></script>
+    <script src="Scripts/mobEAD.bindings.js"></script>
+    <script src="Scripts/mobEAD.dataAccess.js"></script>
+    <script src="Scripts/mobEAD.js"></script>
+
+    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippe t-->
+    <!--script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script-->
+
+</body>
+</html>
