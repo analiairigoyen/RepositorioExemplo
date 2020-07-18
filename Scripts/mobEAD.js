@@ -1,5 +1,4 @@
 ﻿/// <reference path="../Kickstrap/js/jquery-1.8.3.min.js" />
-/// <reference path="../Kickstrap/apps/knockout/knockout-2.2.0.debug.js" />
 /// <reference path="mobEAD.dataAccess.js" />
 
 (function () {
