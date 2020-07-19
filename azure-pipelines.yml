@@ -54,5 +54,5 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    artifactName: 'zip'
+    artifactName: '**/*.zip'
     pathToPublish: '$(build.artifactStagingDirectory)'
