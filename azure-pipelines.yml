@@ -49,7 +49,3 @@ steps:
     contents: '**/*.zip'
     targetFolder: '$(build.artifactStagingDirectory)'
     
-- task: PublishBuildArtifacts@1
-  inputs:
-    artifactName: '**/*.zip'
-    pathToPublish: '$(build.artifactStagingDirectory)'
