@@ -47,5 +47,9 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
+    ArtifactName: MobEAD
     publishLocation: 'Container'
+    
+- task: DownloadPipelineArtifact@2
+  inputs:
+    patterns: '**/*.zip'
