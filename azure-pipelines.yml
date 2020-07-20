@@ -44,8 +44,9 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-
 - task: PublishBuildArtifacts@1    
-  displayName: 'Publish Artifact: drop'
+  displayName: 'Publish Artifact: zip'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
+
+
