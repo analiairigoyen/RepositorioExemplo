@@ -47,7 +47,7 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Build.ArtifactStagingDirectory)'
-    artifact: 
+    artifact: WebApp.zip
   
 
 - task: DownloadPipelineArtifact@2
