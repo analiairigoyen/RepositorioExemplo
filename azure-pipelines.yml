@@ -47,7 +47,7 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: MobEAD
+    ArtifactName: zip
     publishLocation: 'Container'
     
 - task: DownloadPipelineArtifact@2
