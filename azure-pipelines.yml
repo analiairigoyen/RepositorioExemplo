@@ -46,7 +46,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: $(System.DefaultWorkingDirectory)/bin/WebApp
+    targetPath: '$(Build.ArtifactStagingDirectory)'
     artifactName: WebApp
 
 - task: DownloadPipelineArtifact@2
