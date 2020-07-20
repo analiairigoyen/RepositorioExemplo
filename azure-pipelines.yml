@@ -45,8 +45,7 @@ steps:
     configuration: '$(buildConfiguration)'
 
 
-- task: PublishBuildArtifacts@1
+- task: PublishBuildArtifacts@1    
+  displayName: 'Publish Artifact: drop'
   inputs:
-    artifactName: '**/*.zip'
-    pathToPublish: '$(build.artifactStagingDirectory)'
-     
+    PathtoPublish: '$(build.artifactstagingdirectory)'
