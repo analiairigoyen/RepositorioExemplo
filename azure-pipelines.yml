@@ -44,11 +44,11 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-# Publish Build Artifacts # Publish build artifacts to Azure Artifacts/TFS or a file share 
-- task: PublishBuildArtifacts@1 
-  inputs: 
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: 'drop' 
-    publishLocation: 'Container' 
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: $(System.DefaultWorkingDirectory)/bin/WebApp
+    artifactName: WebApp
 
-
+- task: DownloadPipelineArtifact@2
+  inputs:
+    patterns: '**/*.zip'
