@@ -48,7 +48,3 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: zip
-
-- task: DownloadPipelineArtifact@2
-  inputs:
-    patterns: '**/*.zip'
