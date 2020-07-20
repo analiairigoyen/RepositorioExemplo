@@ -47,10 +47,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    artifactName: 'zip'
+    artifactName: '**/*.zip'
     pathToPublish: '$(build.artifactStagingDirectory)'
      
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*.zip'
-    targetFolder: '$(build.artifactStagingDirectory)'
