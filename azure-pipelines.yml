@@ -51,4 +51,9 @@ steps:
     artifactName: 'drop' 
     publishLocation: 'Container' 
 
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.zip'
+    targetFolder: '$(build.artifactStagingDirectory)'
+
 
