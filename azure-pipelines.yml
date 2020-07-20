@@ -49,7 +49,3 @@ steps:
     targetPath: '$(Build.ArtifactStagingDirectory)'
     artifact: WebApp.zip
   
-
-- task: DownloadPipelineArtifact@2
-  inputs:
-    patterns: '**/*.zip'
