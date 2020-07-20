@@ -44,7 +44,12 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-    
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    artifactName: 'zip'
+    pathToPublish: '$(build.artifactStagingDirectory)'
+     
 - task: CopyFiles@2
   inputs:
     contents: '**/*.zip'
