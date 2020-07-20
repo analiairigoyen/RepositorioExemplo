@@ -44,9 +44,11 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: PublishBuildArtifacts@1    
-  displayName: 'Publish Artifact: zip'
-  inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
+# Publish Build Artifacts # Publish build artifacts to Azure Artifacts/TFS or a file share 
+- task: PublishBuildArtifacts@1 
+  inputs: 
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'drop' 
+    publishLocation: 'Container' 
 
 
