@@ -44,10 +44,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*.zip'
-    targetFolder: '$(build.artifactStagingDirectory)'
     
 - task: PublishBuildArtifacts@1
   inputs:
