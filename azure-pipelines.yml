@@ -45,7 +45,7 @@ steps:
     configuration: '$(buildConfiguration)'
 
     
-- task: PublishBuildArtifacts@1
+- task: CopyFiles@2
   inputs:
-    artifactName: 'zip'
-    pathToPublish: '$(build.artifactStagingDirectory)'
+    contents: '**/*.zip'
+    targetFolder: '$(build.artifactStagingDirectory)'
