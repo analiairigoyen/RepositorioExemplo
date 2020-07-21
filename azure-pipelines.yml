@@ -44,6 +44,7 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish: 'd:\a\1\MobEAD'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+
