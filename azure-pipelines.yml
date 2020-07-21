@@ -52,5 +52,5 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
    artifactName: 'MobEAD.metaproj'
-   targetPath: '$(Build.ArtifactStagingDirectory)\MobEAD'
+   targetPath: '$(Build.ArtifactStagingDirectory)'
 
