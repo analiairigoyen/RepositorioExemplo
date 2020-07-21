@@ -27,7 +27,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'mkdir d:\a\1\MobEAD' 
+    script: 'mkdir d:\a\1\' 
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
 - task: NuGetToolInstaller@1
@@ -38,7 +38,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\a\1\MobEAD" /p:DeployIisAppPath="Default Web Site"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)" /p:DeployIisAppPath="Default Web Site"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -50,6 +50,6 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-   artifactName: 'zip'
+   artifactName: 'MobEAD.metaproj'
    targetPath: '$(Build.ArtifactStagingDirectory)'
 
