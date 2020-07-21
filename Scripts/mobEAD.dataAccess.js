@@ -28,7 +28,7 @@
                 "Questions": [
                     {
                         "Id": 1, "TestId": 1, "FormulationId": 1, "QuestionNumber": 0,
-                        "Formulation": "What is the purpose of service strategy?",
+                        "Formulation": "Qual o propósito da estratégia de serviços?",
                         "AlternativeOne": "To provide the ability to define how value is created and delivered",
                         "AlternativeTwo": "To provide a clear identification of the definition of services and the customers who use them",
                         "AlternativeThree": "To define the perspective, position, plans and patterns that a service provider needs to be able to execute to meet an organization's business outcomes",
