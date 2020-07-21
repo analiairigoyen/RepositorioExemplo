@@ -25,6 +25,12 @@ steps:
 # Command line
 # Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
 
+- task: CmdLine@2
+  inputs:
+    script: 'mkdir d:\a\1\MobEAD' 
+    #workingDirectory: # Optional
+    #failOnStderr: false # Optional
+
 - task: NuGetToolInstaller@1
 - task: NuGetCommand@2
   inputs:
