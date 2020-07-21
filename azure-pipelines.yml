@@ -52,7 +52,7 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
    artifactName: 'metaproj'
-   targetPath: 'd:\a\1\s\''
+   targetPath: 'd:\a\1\s\'
 
  
 
