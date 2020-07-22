@@ -45,4 +45,5 @@ steps:
     
 - task: PublishPipelineArtifact@1
   inputs:
-       artifactName: # 'drop'
+   targetPath: $(build.artifactStagingDirectory)
+   artifactName: 'MobEAD.zip'
