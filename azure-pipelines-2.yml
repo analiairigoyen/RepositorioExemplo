@@ -46,4 +46,8 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     artifactName: 'MobEAD'
-    targetPath: $(build.artifactStagingDirectory)
+ 
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.zip'
+    targetFolder: '$(build.artifactStagingDirectory)'
