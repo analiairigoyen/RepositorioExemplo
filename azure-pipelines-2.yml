@@ -45,7 +45,7 @@ steps:
     configuration: '$(buildConfiguration)'
 - task: DownloadPipelineArtifact@2
   inputs:
-    artifact: MObEAD
+    artifact: 'D:\a\1\s\MobEAD'
 
 # task: PublishPipelineArtifact@1
  # inputs:
