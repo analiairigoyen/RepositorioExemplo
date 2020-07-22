@@ -34,7 +34,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\mobEAD.zip" /p:DeployIisAppPath="Default Web Site"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DeployIisAppPath="Default Web Site" /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\MobEAD.zip"'
     #msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
@@ -43,14 +43,9 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-- task: DownloadPipelineArtifact@2
-  inputs:
-    artifact: 'D:\a\1\s\MobEAD'
 
-# task: PublishPipelineArtifact@1
- # inputs:
-   # targetPath: '$(Pipeline.Workspace)' 
-    #artifactName: # 'drop'
-    #artifactName: 'MobEAD'
-    
- 
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    artifactName: 'MobEAD.zip'
+    pathToPublish: $(build.artifactStagingDirectory)\MobEAd.zip
