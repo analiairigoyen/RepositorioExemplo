@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-gb"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-gb"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-gb"> <![endif]-->
@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>MobEAD - Analia </title>
+    <title>MobEAD</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
     <link href="kickstrap.css" rel="stylesheet" />
@@ -18,10 +18,10 @@
 <body>
 
     <div id="sf-wrapper">
-        <!-- ajustando o codigo Analia 2020 Prompt IE 6/7 Analia 100000 ajustes users to install Chrome Frame. Remove this if you support IE 7-.
-       chromium.org/developers/how-tos/chrome-frame-getting-started ssssss-->
-        <!--[if lt IE 8]><p class=chromeframe>Your browser idddds <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-          <t1>Analia teste vamos ver</t1>
+        <!-- Prompt IE 6/7 users to install Chrome Frame. Remove this if you support IE 7-.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+        <!--[if lt IE 8]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
         <nav class="navbar navbar-fixed-top">
             <nav class="navbar-inner">
                 <section class="container navegacao-topo">
@@ -38,7 +38,7 @@
                 <article class="row">
                     <div class="span2"></div>
                     <div class="span8 pagination-centered ">
-                        <p style="text-align: center;">Selcione seu teste!</p>
+                        <p style="text-align: center;">Select your test!</p>
                         <ul data-bind="foreach: Tests">
                             <li class="media well well-small itemLista" data-bind="click:$parent.selectTest"><a href="#" data-bind="text:Exam"></a></li>
                         </ul>
@@ -54,7 +54,6 @@
                             <p data-bind="text: Formulation"></p>
                         </div>
                         <div class="span6 respostas">
-                            <h1> Analia Irigoyen <h1>
                             <ul>
                                 <li class="media well" data-bind="css: { 'well-selecionado': NumberAnswered() == 1 },click:function(data,event){ selectAlternative(1); }">
                                     <span class="indice">a  
