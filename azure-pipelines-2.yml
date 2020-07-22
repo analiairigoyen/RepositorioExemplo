@@ -34,7 +34,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DeployIisAppPath="Default Web Site" /p:DesktopBuildPackageLocation="d:\a\1\MobEAD.zip"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DeployIisAppPath="Default Web Site" /p:DesktopBuildPackageLocation="d:\a\1\"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -50,5 +50,5 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    artifactName: 'MobEAD.zip'
+    artifactName: 'MobEAD'
     pathToPublish: '$(build.artifactStagingDirectory)'
