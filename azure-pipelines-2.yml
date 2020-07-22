@@ -47,4 +47,5 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-   pathToPublish: $(build.artifactStagingDirectory)
+    artifactName: 'd:\a\1\a\MobEAD.zip'
+    pathToPublish: $(build.artifactStagingDirectory)
