@@ -47,4 +47,4 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    pathToPublish: $(build.artifactStagingDirectory)
+   pathToPublish: $(build.artifactStagingDirectory)
