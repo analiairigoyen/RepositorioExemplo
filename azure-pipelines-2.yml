@@ -34,7 +34,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)" /p:DeployIisAppPath="Default Web Site"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\MobEAD.Zip"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -44,5 +44,5 @@ steps:
     configuration: '$(buildConfiguration)'
     
 - task: PublishPipelineArtifact@1
- # inputs:
+  #inputs:
   # targetPath: $(build.artifactStagingDirectory)
