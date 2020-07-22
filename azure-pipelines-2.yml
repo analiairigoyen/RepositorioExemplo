@@ -44,5 +44,5 @@ steps:
     configuration: '$(buildConfiguration)'
     
 - task: PublishPipelineArtifact@1
-  inputs:
-   targetPath: $(build.artifactStagingDirectory)
+ # inputs:
+  # targetPath: $(build.artifactStagingDirectory)
