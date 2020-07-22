@@ -46,7 +46,9 @@ steps:
     
 
 - task: PublishPipelineArtifact@1
-  #inputs:
+  inputs:
+    targetPath: '$(Pipeline.Workspace)' 
+    #artifactName: # 'drop'
     #artifactName: 'MobEAD'
     
  
