@@ -43,12 +43,12 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-#- task: CopyFiles@2
-#  inputs:
-#   contents: 'd:\a\1\s\*.**'
- #  targetFolder: $(build.artifactStagingDirectory)
+- task: CopyFiles@2
+  inputs:
+   contents: 'd:\a\1\s\*.**'
+   targetFolder: $(build.artifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
   inputs:
-    #artifactName: 'MobEAD'
+    artifactName: 'MobEAD'
     pathToPublish: $(build.artifactStagingDirectory)
