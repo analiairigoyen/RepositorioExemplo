@@ -34,7 +34,8 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true'
+    msbuildArgs: '/p:DeployOnBuild=true /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true'
+  #  msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -43,11 +44,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     
-
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*'
-    targetFolder: '$(build.artifactStagingDirectory)'
 
 - task: PublishPipelineArtifact@1
   #inputs:
