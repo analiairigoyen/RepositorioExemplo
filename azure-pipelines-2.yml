@@ -46,4 +46,4 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
     artifactName: 'MobEAD'
-    # targetPath: $(build.artifactStagingDirectory)
+    targetPath: $(build.artifactStagingDirectory)
