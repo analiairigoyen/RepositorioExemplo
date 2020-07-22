@@ -44,5 +44,6 @@ steps:
     configuration: '$(buildConfiguration)'
     
 - task: PublishPipelineArtifact@1
-  #inputs:
-  # targetPath: $(build.artifactStagingDirectory)
+  inputs:
+    artifactName: 'MobEAD.zip'
+    # targetPath: $(build.artifactStagingDirectory)
