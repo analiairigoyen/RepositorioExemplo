@@ -45,10 +45,10 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-  contents: '**/*.*'
-  targetFolder: $(build.artifactStagingDirectory)
+    contents: '**/*.*'
+    targetFolder: $(build.artifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
   inputs:
-    artifactName: 'd:\a\1\s\MobEAD.zip'
+    artifactName: '..\s\MobEAD.zip'
     pathToPublish: $(build.artifactStagingDirectory)
