@@ -46,8 +46,8 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    contents: '**/*.zip'
-    targetFolder: 'd:\1\a'
+    contents: 'd:\a\1\s\*.**'
+    targetFolder: $(build.artifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
   inputs:
