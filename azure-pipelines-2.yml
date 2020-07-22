@@ -45,7 +45,7 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-   contents: 'd:\a\1\s\*.**'
+   contents: 'd:\a\1\*.**'
    targetFolder: $(build.artifactStagingDirectory)
 
 - task: PublishBuildArtifacts@1
