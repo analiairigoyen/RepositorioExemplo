@@ -43,11 +43,14 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
     
+
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*'
+    targetFolder: '$(build.artifactStagingDirectory)'
+
 - task: PublishPipelineArtifact@1
   inputs:
     artifactName: 'MobEAD'
+    
  
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*.zip'
-    targetFolder: '$(build.artifactStagingDirectory)'
