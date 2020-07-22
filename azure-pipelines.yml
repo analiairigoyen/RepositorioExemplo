@@ -52,7 +52,7 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
    artifactName: 'metaproj'
-   targetPath: '$(Build.ArtifactStagingDirectory)'
+   targetPath: 'd:\a\1\'
 
  
 
